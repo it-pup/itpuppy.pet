@@ -1,0 +1,68 @@
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+jspm_packages/
+web_modules/
+.pnpm-store/
+
+
+# Build Outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.docusaurus/
+.cache/
+
+
+# Logs, Caches, System Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.stylelintcache
+.prettiercache
+.turbo/
+
+
+# Editor / IDE Settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+.playwright/
+playwright-report/
+test-results/
