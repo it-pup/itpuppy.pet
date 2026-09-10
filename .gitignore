@@ -14,7 +14,6 @@ jspm_packages/
 web_modules/
 .pnpm-store/
 
-
 # Build Outputs
 dist/
 build/
@@ -24,7 +23,6 @@ out/
 .svelte-kit/
 .docusaurus/
 .cache/
-
 
 # Logs, Caches, System Files
 *.log
@@ -36,7 +34,6 @@ pnpm-debug.log*
 .stylelintcache
 .prettiercache
 .turbo/
-
 
 # Editor / IDE Settings
 .vscode/*
@@ -50,7 +47,6 @@ pnpm-debug.log*
 *.sln
 *.swp
 
-
 # Operating System Files
 .DS_Store
 .DS_Store?
@@ -58,7 +54,6 @@ pnpm-debug.log*
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-
 
 # Testing & Coverage
 coverage/
