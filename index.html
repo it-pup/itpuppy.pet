@@ -10,34 +10,63 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
 
-    <body x-data="app" class="app" x-cloak>
-        <div class="sidebar">
-            <h3 class="sidebar__title">itpuppy</h3>
-            
-            <div class="sidebar__nav">
-                <button class="sidebar__nav__el" @click="switchScreen(Screens.ABOUT)">about</button>
-                <button class="sidebar__nav__el" @click="switchScreen(Screens.PROJECTS)">projects</button>
-                <button class="sidebar__nav__el" @click="switchScreen(Screens.SUPPORT)">support</button>
-                <button class="sidebar__nav__el" @click="switchScreen(Screens.SOCIALS)">socials</button>
+    <body x-data="app" x-cloak>
+        <div class="app">
+            <div class="sidebar">
+                <h3 class="sidebar__title">itpuppy</h3>
+                
+                <div class="sidebar__nav">
+                    <button 
+                        class="sidebar__nav__el" 
+                        @click="switchScreen(Screens.ABOUT)"
+                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.ABOUT) }"
+                    >
+                        about
+                    </button>
+
+                    <button 
+                        class="sidebar__nav__el" 
+                        @click="switchScreen(Screens.PROJECTS)"
+                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.PROJECTS) }"
+                    >
+                        projects
+                    </button>
+
+                    <button 
+                        class="sidebar__nav__el" 
+                        @click="switchScreen(Screens.SUPPORT)"
+                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.SUPPORT) }"
+                    >
+                        support
+                    </button>
+
+                    <button 
+                        class="sidebar__nav__el" 
+                        @click="switchScreen(Screens.SOCIALS)"
+                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.SOCIALS) }"
+                    >
+                        socials
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="content">
-            <section class="about section" x-show="isScreen(Screens.ABOUT)">
-                about
-            </section>
+            <div class="content">
+                <section class="about section" x-show="isScreen(Screens.ABOUT)" x-transition>
+                    about
+                </section>
 
-            <section class="projects section" x-show="isScreen(Screens.PROJECTS)">
-                projects
-            </section>
+                <section class="projects section" x-show="isScreen(Screens.PROJECTS)" x-transition>
+                    projects
+                </section>
 
-            <section class="support section" x-show="isScreen(Screens.SUPPORT)">
-                support
-            </section>
+                <section class="support section" x-show="isScreen(Screens.SUPPORT)" x-transition>
+                    support
+                </section>
 
-            <section class="socials section" x-show="isScreen(Screens.SOCIALS)">
-                socials
-            </section>
+                <section class="socials section" x-show="isScreen(Screens.SOCIALS)" x-transition>
+                    socials
+                </section>
+            </div>
         </div>
 
         <script src="js/app.js"></script>
