@@ -2,21 +2,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* base */
+:root {
+    --main-bg: #171717;
+    --second-bg: #0f0f0f;
+    --main-text: #ffffff;
+
+    --content-width: 35vw;
+}
+
 body {
     font-family: "Roboto Mono", monospace;
     font-size: 14px;
+
+    background: var(--main-bg);
+    color: var(--main-text);
 }
 /* ==== */
 
 /* app / sections */
 .app {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+    position: relative;
 }
 
 .content {
     position: relative;
+
+    width: var(--content-width);
+    height: 100vh;
+
+    margin: 0 auto;
+    padding: 15px;
+
+    background-color: var(--second-bg);
 }
 
 .section {
@@ -25,8 +42,27 @@ body {
 /* ============== */
 
 /* sidebar */
-.sidebar__nav__el {
-    display: block;
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: absolute;
+    width: calc(100vw - var(--content-width) * 2);
+    top: 10px;
+}
+
+.sidebar__title {
+    font-weight: 400;
+    font-size: 1.4rem;
+
+    margin-bottom: 5px;
+}
+
+.sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .sidebar__nav__el--active {
