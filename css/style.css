@@ -7,7 +7,7 @@
     --second-bg: #0f0f0f;
     --main-text: #ffffff;
 
-    --content-width: 35vw;
+    --content-width: 50vw;
 }
 
 body {
@@ -48,7 +48,7 @@ body {
     align-items: flex-end;
 
     position: absolute;
-    width: calc(100vw - var(--content-width) * 2);
+    width: calc((100vw - var(--content-width)) / 2 - 20px); /* love this (no) */
     top: 10px;
 }
 
