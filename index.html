@@ -34,10 +34,10 @@
 
                     <button 
                         class="button" 
-                        @click="switchScreen(Screens.SOCIALS)"
-                        :class="{ 'active': isScreen(Screens.SOCIALS) }"
+                        @click="switchScreen(Screens.LINKS)"
+                        :class="{ 'active': isScreen(Screens.LINKS) }"
                     >
-                        socials
+                        links
                     </button>
                 </div>
             </div>
@@ -201,60 +201,70 @@
                 </section>
 
                 <section class="projects section" x-show="isScreen(Screens.PROJECTS)">
+                    <h2 class="hero-title"><i class="bi bi-code-slash"></i> projects</h2>
+
                     <p>
                         silly projects i've made<br>
                         or working on right now,,,
                     </p>
 
-                    <div class="subsection">
-                        <p class="title">minecraft mods</p>
+                    <template x-for="category in projects">
+                        <div class="subsection">
+                            <p class="title" x-text="category.subsection"></p>
 
-                        <template x-for="mod in projects.mods">
-                            <div class="project">
-                                <p class="name" x-text="mod.name"></p>
+                            <template x-for="entry in category.entries">
+                                <div class="project">
+                                    <p class="name" x-text="entry.name"></p>
 
-                                <template x-for="[key, value] in Object.entries(mod.links)">
-                                    <p class="link" :class="key">
-                                        - <a 
-                                            :href="value" 
-                                            x-text="key"
-                                            class="url"
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                        ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
-                                    </p>
-                                </template>
-                            </div>
-                        </template>
-                    </div>
-
-                    <div class="subsection">
-                        <p class="title">web projects</p>
-
-                        <template x-for="website in projects.web">
-                            <div class="project">
-                                <p class="name" x-text="website.name"></p>
-
-                                <template x-for="[key, value] in Object.entries(website.links)">
-                                    <p class="link" :class="key">
-                                        - <a 
-                                            :href="value" 
-                                            x-text="key"
-                                            class="url"
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                        ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
-                                    </p>
-                                </template>
-                            </div>
-                        </template>
-                    </div>
+                                    <template x-for="[key, value] in Object.entries(entry.links)">
+                                        <p class="link" :class="key">
+                                            - <a 
+                                                :href="value" 
+                                                x-text="key"
+                                                class="url"
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                            ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
+                                        </p>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
 
                     <p class="text-sub">// this list will update over time!</p>
                 </section>
 
-                <section class="socials section" x-show="isScreen(Screens.SOCIALS)">
-                    socials
+                <section class="links section" x-show="isScreen(Screens.LINKS)">
+                    <h2 class="hero-title"><i class="bi bi-chat-square-heart-fill"></i> links</h2>
+
+                    <p>
+                        socials, bookmarks, recommendations<br>
+                        memes, and a bunch of other linkable stuff
+                    </p>
+
+                    <template x-for="category in links">
+                        <div class="subsection">
+                            <p class="title" x-text="category.subsection"></p>
+
+                            <template x-for="entry in category.entries">
+                                <div class="link">
+                                    <i class="bi" :class="[entry.icon, entry.name]"></i>
+                                    <a 
+                                        :href="entry.url"
+                                        target="_blank"
+                                        class="url"
+                                        :class="entry.name"
+                                        rel="noopener noreferrer"
+                                        x-text="entry.name"
+                                    ></a>
+                                    <i class="bi bi-arrow-up-right-square-fill"></i>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <p class="text-sub">// this list will update over time!</p>
                 </section>
             </div>
         </div>

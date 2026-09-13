@@ -4,7 +4,7 @@ function app() {
         Screens: {
             ABOUT: "ABOUT",
             PROJECTS: "PROJECTS",
-            SOCIALS: "SOCIALS"
+            LINKS: "LINKS"
         },
         currentScreen: null,
 
@@ -39,32 +39,75 @@ function app() {
             }
         ],
 
-        projects: {
-            mods: [
-                {
-                    name: "woasts",
-                    links: {
-                        github: "https://github.com/it-pup/woasts"
+        projects: [
+            {
+                subsection: "minecraft mods",
+                entries: [
+                    {
+                        name: "woasts",
+                        links: {
+                            github: "https://github.com/it-pup/woasts"
+                        }
+                    },
+                    {
+                        name: "woofaddons",
+                        links: {
+                            github: "https://github.com/it-pup/woofaddons"
+                        }
                     }
-                },
-                {
-                    name: "woofaddons",
-                    links: {
-                        github: "https://github.com/it-pup/woofaddons"
+                ]
+            },
+            {
+                subsection: "web projects",
+                entries: [
+                    {
+                        name: "homepage",
+                        links: {
+                            visit: "https://itpuppy.pet",
+                            github: "https://github.com/it-pup/itpuppy.pet"
+                        }
                     }
-                }
-            ],
+                ]
+            }
+        ],
 
-            web: [
-                {
-                    name: "homepage",
-                    links: {
-                        visit: "https://itpuppy.pet",
-                        github: "https://github.com/it-pup/itpuppy.pet"
+        links: [
+            {
+                subsection: "socials",
+                entries: [
+                    {
+                        name: "github",
+                        url: "https://github.com/it-pup",
+                        icon: "bi-github"
+                    },
+                    {
+                        name: "bluesky",
+                        url: "https://bsky.app/profile/itpuppy.pet",
+                        icon: "bi-bluesky"
                     }
-                }
-            ]
-        },
+                ]
+            },
+            {
+                subsection: "game profiles",
+                entries: [
+                    {
+                        name: "osu",
+                        url: "https://osu.ppy.sh/users/wagever",
+                        icon: "bi-circle-fill"
+                    },
+                    {
+                        name: "monkeytype",
+                        url: "https://monkeytype.com/profile/itpuppy",
+                        icon: "bi-keyboard-fill"
+                    },
+                    {
+                        name: "minecraft",
+                        url: "https://namemc.com/profile/022bfdea-17fb-4b22-ad5a-ec84fe93b569",
+                        icon: "bi-controller"
+                    }
+                ]
+            }
+        ],
 
         // functions
         switchScreen(screen) {

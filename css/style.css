@@ -13,6 +13,11 @@
     --github-link-color: #c9cde3;
     --visit-link-color: #efefef;
 
+    --bsky-link-color: #84a1ff;
+    --osu-link-color: #f6c2ff;
+    --monkeytype-link-color: #fff6af;
+    --minecraft-link-color: #caffd2;
+
     --content-width: 40vw;
 }
 
@@ -170,6 +175,12 @@ body {
 
         /* projects section */
         .projects {
+            .hero-title {
+                font-weight: normal;
+                font-size: 2.1rem;
+                margin-bottom: 25px;
+            }
+
             .project {
                 margin: 10px 0;
 
@@ -184,6 +195,27 @@ body {
                 .github { color: var(--github-link-color); }
                 .visit { color: var(--visit-link-color); }
             }
+        }
+
+        /* links section */
+        .links {
+            .hero-title {
+                font-weight: normal;
+                font-size: 2.1rem;
+                margin-bottom: 25px;
+            }
+
+            .link {
+                .url {
+                    text-decoration: underline;
+                }
+
+                .github { color: var(--github-link-color); }
+                .bluesky { color: var(--bsky-link-color); }
+                .osu { color: var(--osu-link-color); }
+                .monkeytype { color: var(--monkeytype-link-color); }
+                .minecraft { color: var(--minecraft-link-color); }
+            }   
         }
     }
 }
