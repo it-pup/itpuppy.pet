@@ -6,6 +6,9 @@
     --main-bg: #171717;
     --second-bg: #0f0f0f;
 
+    --menu-nav-bg: #0b0b0b;
+    --menu-nav-border: #222222;
+
     --main-text: #ffffff;
     --second-text: #5F5F5F;
     --sub-text: #8D8D8D;
@@ -19,6 +22,26 @@
     --minecraft-link-color: #caffd2;
 
     --content-width: 40vw;
+
+    @media (width <= 2000px) {
+        --content-width: 50vw;
+    }
+
+    @media (width <= 1750px) {
+        --content-width: 55vw;
+    }
+
+    @media (width <= 1570px) {
+        --content-width: 60vw;
+    }
+
+    @media (width <= 1000px) {
+        --content-width: 65vw;
+    }
+
+    @media (width <= 830px) {
+        --content-width: 100vw;
+    }
 }
 
 html {
@@ -69,6 +92,10 @@ body {
                 text-decoration: underline;
             }
         }
+
+        @media (width <= 830px) {
+            display: none;
+        }
     }
 
     /* sections */
@@ -78,6 +105,60 @@ body {
 
         width: var(--content-width);
         margin: 0 auto;
+
+        .mobile-sidebar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 35px 0 35px;
+            margin-bottom: -15px;
+
+            position: relative;
+
+            .title {
+                font-size: 1.3rem;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+
+            .btn {
+                font-size: 1.5rem;
+            }
+
+            .nav {
+                position: absolute;
+
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+
+                top: calc(20px + 40px);
+                right: 35px;
+
+                background-color: var(--menu-nav-bg);
+                border: 1px solid var(--menu-nav-border);
+                width: fit-content;
+                height: fit-content;
+
+                padding: 10px 20px 10px 40px;
+
+                .active {
+                    text-decoration: underline;
+                }
+
+                @media (width <= 480px) {
+                    top: calc(10px + 40px);
+                    right: 20px;
+                }
+            }
+
+            @media (width > 830px) {
+                display: none;
+            }
+
+            @media (width <= 480px) {
+                padding: 10px 20px 0 20px;
+            }
+        }
 
         .section {
             padding: 35px 35px 5px 35px;
@@ -94,8 +175,16 @@ body {
                 .table {
                     .key {
                         padding-right: 45px;
+
+                        @media (width <= 530px) {
+                            padding-right: 20px;
+                        }
                     }
                 }
+            }
+
+            @media (width <= 480px) {
+                padding: 20px 20px 5px 20px;
             }
         }
 
@@ -153,6 +242,22 @@ body {
                     flex-direction: row;
                     justify-content: center;
                     gap: 10px;
+
+                    @media (width <= 1270px) {
+                        padding: 0 100px;
+                    }
+
+                    @media (width <= 1105px) {
+                        padding: 0 50px;
+                    }
+
+                    @media (width <= 560px) {
+                        padding: 0 20px;
+                    }
+
+                    @media (width <= 500px) {
+                        padding: 0 10px;
+                    }
                 }
             }
 

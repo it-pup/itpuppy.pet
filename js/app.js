@@ -6,7 +6,9 @@ function app() {
             PROJECTS: "PROJECTS",
             LINKS: "LINKS"
         },
+
         currentScreen: null,
+        mobileNavShow: false,
 
         testimonials: [
             {

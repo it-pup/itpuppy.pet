@@ -43,6 +43,37 @@
             </div>
 
             <div class="content">
+                <div class="mobile-sidebar">
+                    <p class="title">itpuppy</p>
+                    <button class="btn" @click="mobileNavShow = !mobileNavShow"><i class="bi bi-list"></i></button>
+
+                    <div class="nav" x-show="mobileNavShow" @click.outside="mobileNavShow = false">
+                        <button 
+                            class="button" 
+                            @click="switchScreen(Screens.ABOUT)"
+                            :class="{ 'active': isScreen(Screens.ABOUT) }"
+                        >
+                            about
+                        </button>
+
+                        <button 
+                            class="button" 
+                            @click="switchScreen(Screens.PROJECTS)"
+                            :class="{ 'active': isScreen(Screens.PROJECTS) }"
+                        >
+                            projects
+                        </button>
+
+                        <button 
+                            class="button" 
+                            @click="switchScreen(Screens.LINKS)"
+                            :class="{ 'active': isScreen(Screens.LINKS) }"
+                        >
+                            links
+                        </button>
+                    </div>
+                </div>
+
                 <section class="about section" x-show="isScreen(Screens.ABOUT)">
                     <div class="hero">
                         <h2 class="title"><i class="bi bi-clouds-fill"></i> autumn</h2>
@@ -176,6 +207,18 @@
                             <a href="https://mayaqq.dev/" target="_blank" rel="noopener noreferrer">
                                 <img src="assets/buttons/mayaqq.gif" alt="mayaqq" class="button">
                             </a>
+
+                            <a href="https://mona.cat/" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/buttons/meowona.png" alt="meowona" class="button">
+                            </a>
+
+                            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/buttons/pandy.jpg" alt="pandy" class="button">
+                            </a>
+
+                            <a href="https://meowdd.ing/" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/buttons/meowdding.png" alt="meowdding" class="button">
+                            </a>
                         </div>
 
                         <div class="group">
@@ -186,6 +229,7 @@
                             <img class="button" src="assets/buttons/general/js.png" alt="js">
                             <img class="button" src="assets/buttons/general/queen.gif" alt="queen">
                             <img class="button" src="assets/buttons/general/trans.gif" alt="trans">
+                            <img class="button" src="assets/buttons/general/estrogen.gif" alt="estrogen">
                         </div>
                     </div>
 
