@@ -22,7 +22,7 @@ function app() {
                 text: "Autumn makes my tail wag"
             },
             {
-                from: "'Sappho 594 BC'",
+                from: "Sappho 594 BC",
                 text: "Women :drooling_face:"
             },
             {
@@ -38,6 +38,10 @@ function app() {
                 from: "box",
                 url: "https://github.com/Bloxigus",
                 text: "meow"
+            },
+            {
+                from: "rainy's wife",
+                text: "i love the girl above me"
             }
         ],
 
