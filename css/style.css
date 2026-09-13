@@ -1,13 +1,22 @@
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* base */
+/* base, root */
 :root {
     --main-bg: #171717;
     --second-bg: #0f0f0f;
-    --main-text: #ffffff;
 
-    --content-width: 50vw;
+    --main-text: #ffffff;
+    --second-text: #5F5F5F;
+    --sub-text: #8D8D8D;
+
+    --content-width: 40vw;
+}
+
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    height: 100%;
 }
 
 body {
@@ -16,56 +25,143 @@ body {
 
     background: var(--main-bg);
     color: var(--main-text);
+    height: 100%;
 }
-/* ==== */
+/* ========== */
 
-/* app / sections */
+/* application */
 .app {
-    position: relative;
+    .text-sub { color: var(--sub-text); }
+
+    /* sidebar */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        position: absolute;
+        width: calc((100vw - var(--content-width)) / 2 - 30px); /* love this (no) */
+        top: 10px;
+
+        .title {
+            font-weight: 400;
+            font-size: 1.4rem;
+
+            margin-bottom: 5px;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .active {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    /* sections */
+    .content {
+        background-color: var(--second-bg);
+        min-height: 100vh;
+
+        width: var(--content-width);
+        margin: 0 auto;
+
+        .section {
+            padding: 35px 35px 5px 35px;
+            line-height: 17px;
+
+            .subsection {
+                margin: 32px 0;
+
+                .title {
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+
+                .table {
+                    .key {
+                        padding-right: 45px;
+                    }
+                }
+            }
+        }
+
+        /* about section */
+        .about {
+            .hero {
+                .title {
+                    font-size: 2.1rem;
+                    font-weight: 400;
+
+                    margin-bottom: 5px;
+                }
+
+                .subtitle {
+                    font-size: 1.05rem;
+                    color: var(--second-text);
+
+                    margin-bottom: 25px;
+                }
+            }
+
+            .info {
+                .fav-color {
+                    color: #b2ffb9;
+                }
+            }
+
+            .testimonials {
+                .testimonial {
+                    margin: 10px 0;
+
+                    .from {
+                        margin-left: 30px;
+
+                        .link {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .buttons {
+                margin-top: 60px;
+
+                .button {
+                    display: inline;
+                }
+
+                .group {
+                    margin: 15px 0;
+                    padding: 0 150px;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 10px;
+                }
+            }
+
+            .smallprint {
+                margin-top: 60px;
+                text-align: center;
+                font-size: 0.8rem;
+
+                color: var(--second-text);
+
+                .line {
+                    height: 1px;
+                    width: 100%;
+
+                    background-color: var(--second-text);
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
 }
-
-.content {
-    position: relative;
-
-    width: var(--content-width);
-    height: 100vh;
-
-    margin: 0 auto;
-    padding: 15px;
-
-    background-color: var(--second-bg);
-}
-
-.section {
-    position: absolute;
-}
-/* ============== */
-
-/* sidebar */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    position: absolute;
-    width: calc((100vw - var(--content-width)) / 2 - 20px); /* love this (no) */
-    top: 10px;
-}
-
-.sidebar__title {
-    font-weight: 400;
-    font-size: 1.4rem;
-
-    margin-bottom: 5px;
-}
-
-.sidebar__nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.sidebar__nav__el--active {
-    text-decoration: underline;
-}
-/* ======= */
+/* =========== */

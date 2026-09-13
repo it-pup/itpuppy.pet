@@ -13,37 +13,29 @@
     <body x-data="app" x-cloak>
         <div class="app">
             <div class="sidebar">
-                <h3 class="sidebar__title">itpuppy</h3>
+                <h3 class="title">itpuppy</h3>
                 
-                <div class="sidebar__nav">
+                <div class="nav">
                     <button 
-                        class="sidebar__nav__el" 
+                        class="button" 
                         @click="switchScreen(Screens.ABOUT)"
-                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.ABOUT) }"
+                        :class="{ 'active': isScreen(Screens.ABOUT) }"
                     >
                         about
                     </button>
 
                     <button 
-                        class="sidebar__nav__el" 
+                        class="button" 
                         @click="switchScreen(Screens.PROJECTS)"
-                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.PROJECTS) }"
+                        :class="{ 'active': isScreen(Screens.PROJECTS) }"
                     >
                         projects
                     </button>
 
                     <button 
-                        class="sidebar__nav__el" 
-                        @click="switchScreen(Screens.SUPPORT)"
-                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.SUPPORT) }"
-                    >
-                        support
-                    </button>
-
-                    <button 
-                        class="sidebar__nav__el" 
+                        class="button" 
                         @click="switchScreen(Screens.SOCIALS)"
-                        :class="{ 'sidebar__nav__el--active': isScreen(Screens.SOCIALS) }"
+                        :class="{ 'active': isScreen(Screens.SOCIALS) }"
                     >
                         socials
                     </button>
@@ -51,19 +43,168 @@
             </div>
 
             <div class="content">
-                <section class="about section" x-show="isScreen(Screens.ABOUT)" x-transition>
-                    about
+                <section class="about section" x-show="isScreen(Screens.ABOUT)">
+                    <div class="hero">
+                        <h2 class="title"><i class="bi bi-clouds-fill"></i> autumn</h2>
+                        <p class="subtitle">@itpuppy</p>
+                    </div>
+
+                    <p class="bio">
+                        hiii,,, my name is <b>autumn</b><br>
+                        also known as <b>itpuppy/itpup</b><br>
+                        <br>
+                        i'm a web development major, as well as a gamedev<br>
+                        ...and an amateur minecraft modder
+                    </p>
+
+                    <div class="info subsection">
+                        <p class="title">stuff about me (extremely useful)</p>
+
+                        <table class="table">
+                            <tr>
+                                <td class="key">birthday</td>
+                                <td>18.04</td>
+                            </tr>
+                            <tr>
+                                <td class="key">pronouns</td>
+                                <td>it/she 🏳️‍⚧️</td>
+                            </tr>
+                            <tr>
+                                <td class="key">langs</td>
+                                <td>en, ru, zh <span class="text-sub">// learning!</span></td>
+                            </tr>
+                            <tr>
+                                <td class="key">last mood upd</td>
+                                <td>bwaa <span class="text-sub">// 2 months ago</span></td>
+                            </tr>
+                            <tr>
+                                <td class="key">fav anime</td>
+                                <td>nichijou</td>
+                            </tr>
+                            <tr>
+                                <td class="key">fav music genre</td>
+                                <td>hyperpop</td>
+                            </tr>
+                            <tr>
+                                <td class="key">fav color</td>
+                                <td><i class="bi bi-square-fill fav-color"></i> #b2ffb9</td>
+                            </tr>
+                            <tr>
+                                <td class="key">fav food</td>
+                                <td>tempura rolls</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="using subsection">
+                        <p class="title">things i use on a daily basis</p>
+
+                        <table class="table">
+                            <tr>
+                                <td class="key">coding</td>
+                                <td>vscode, intellij, micro</td>
+                            </tr>
+                            <tr>
+                                <td class="key">music</td>
+                                <td>ytmusic and its clients</td>
+                            </tr>
+                            <tr>
+                                <td class="key">browsing</td>
+                                <td>thorium & vivaldi</td>
+                            </tr>
+                            <tr>
+                                <td class="key">texting</td>
+                                <td>exteragram, legcord, fluffychat & cinny</td>
+                            </tr>
+                            <tr>
+                                <td class="key">design</td>
+                                <td>figma</td>
+                            </tr>
+                            <tr>
+                                <td class="key">term</td>
+                                <td>iterm2 + fish</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="testimonials subsection">
+                        <p class="title">testimonials!</p>
+
+                        <template x-for="testimonial in testimonials">
+                            <div class="testimonial">
+                                <p class="text" x-text="testimonial.text"></p>
+                                
+                                <template x-if="!Object.hasOwn(testimonial, 'url')">
+                                    <p class="from">- <span x-text="testimonial.from"></span></p>
+                                </template>
+
+                                <template x-if="Object.hasOwn(testimonial, 'url')">
+                                    <p class="from">
+                                        - <a 
+                                            :href="testimonial.url" 
+                                            x-text="testimonial.from" 
+                                            class="link" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                        ></a>
+                                    </p>
+                                </template>
+                            </div>
+                        </template>
+
+                        <p class="comment text-sub">// sorted alphabetically by name</p>
+                    </div>
+
+                    <div class="contacts subsection">
+                        <p class="title">contact</p>
+
+                        <p class="contact">email <span class="text-sub">via</span> contact [at] itpuppy [dot] pet</p>
+                        <p class="contact">matrix <span class="text-sub">via</span> autumn [colon] mona [dot] cat</p>
+                        <p class="contact">bsky dms <span class="text-sub">via</span> itpuppy [dot] pet</p>
+                    </div>
+
+                    <div class="buttons subsection">
+                        <div class="group">
+                            <a href="#">
+                                <img src="assets/buttons/itpuppy.png" alt="itpuppy" class="button">
+                            </a>
+
+                            <a href="https://kathund.dev/" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/buttons/Amber_dark.png" alt="Amber" class="button">
+                            </a>
+
+                            <a href="https://mayaqq.dev/" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/buttons/mayaqq.gif" alt="mayaqq" class="button">
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <img class="button" src="assets/buttons/general/88by31.gif" alt="88by31">
+                            <img class="button" src="assets/buttons/general/any-browser.png" alt="any-browser">
+                            <img class="button" src="assets/buttons/general/darwin.gif" alt="darwin">
+                            <img class="button" src="assets/buttons/general/design.png" alt="design">
+                            <img class="button" src="assets/buttons/general/js.png" alt="js">
+                            <img class="button" src="assets/buttons/general/queen.gif" alt="queen">
+                            <img class="button" src="assets/buttons/general/trans.gif" alt="trans">
+                        </div>
+                    </div>
+
+                    <div class="smallprint subsection">
+                        <div class="line"></div>
+
+                        <p class="text">
+                            itpuppy, 2026-2026<br>
+                            hosted using cloudflare pages<br>
+                            thanks to mona.cat for the itpuppy.pet domain &lt;3
+                        </p>
+                    </div>
                 </section>
 
-                <section class="projects section" x-show="isScreen(Screens.PROJECTS)" x-transition>
+                <section class="projects section" x-show="isScreen(Screens.PROJECTS)">
                     projects
                 </section>
 
-                <section class="support section" x-show="isScreen(Screens.SUPPORT)" x-transition>
-                    support
-                </section>
-
-                <section class="socials section" x-show="isScreen(Screens.SOCIALS)" x-transition>
+                <section class="socials section" x-show="isScreen(Screens.SOCIALS)">
                     socials
                 </section>
             </div>
