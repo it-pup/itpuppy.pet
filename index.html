@@ -146,7 +146,7 @@
                                             class="link" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                        ></a>
+                                        ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
                                     </p>
                                 </template>
                             </div>
@@ -201,7 +201,56 @@
                 </section>
 
                 <section class="projects section" x-show="isScreen(Screens.PROJECTS)">
-                    projects
+                    <p>
+                        silly projects i've made<br>
+                        or working on right now,,,
+                    </p>
+
+                    <div class="subsection">
+                        <p class="title">minecraft mods</p>
+
+                        <template x-for="mod in projects.mods">
+                            <div class="project">
+                                <p class="name" x-text="mod.name"></p>
+
+                                <template x-for="[key, value] in Object.entries(mod.links)">
+                                    <p class="link" :class="key">
+                                        - <a 
+                                            :href="value" 
+                                            x-text="key"
+                                            class="url"
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                        ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
+                                    </p>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="subsection">
+                        <p class="title">web projects</p>
+
+                        <template x-for="website in projects.web">
+                            <div class="project">
+                                <p class="name" x-text="website.name"></p>
+
+                                <template x-for="[key, value] in Object.entries(website.links)">
+                                    <p class="link" :class="key">
+                                        - <a 
+                                            :href="value" 
+                                            x-text="key"
+                                            class="url"
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                        ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
+                                    </p>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+
+                    <p class="text-sub">// this list will update over time!</p>
                 </section>
 
                 <section class="socials section" x-show="isScreen(Screens.SOCIALS)">

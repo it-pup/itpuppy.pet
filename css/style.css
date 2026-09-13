@@ -10,6 +10,9 @@
     --second-text: #5F5F5F;
     --sub-text: #8D8D8D;
 
+    --github-link-color: #c9cde3;
+    --visit-link-color: #efefef;
+
     --content-width: 40vw;
 }
 
@@ -31,7 +34,9 @@ body {
 
 /* application */
 .app {
-    .text-sub { color: var(--sub-text); }
+    .text-sub { 
+        color: var(--sub-text); 
+    }
 
     /* sidebar */
     .sidebar {
@@ -160,6 +165,24 @@ body {
                     background-color: var(--second-text);
                     margin-bottom: 30px;
                 }
+            }
+        }
+
+        /* projects section */
+        .projects {
+            .project {
+                margin: 10px 0;
+
+                .link {
+                    margin-left: 10px;
+
+                    .url {
+                        text-decoration: underline;
+                    }
+                }
+
+                .github { color: var(--github-link-color); }
+                .visit { color: var(--visit-link-color); }
             }
         }
     }

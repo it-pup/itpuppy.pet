@@ -39,6 +39,33 @@ function app() {
             }
         ],
 
+        projects: {
+            mods: [
+                {
+                    name: "woasts",
+                    links: {
+                        github: "https://github.com/it-pup/woasts"
+                    }
+                },
+                {
+                    name: "woofaddons",
+                    links: {
+                        github: "https://github.com/it-pup/woofaddons"
+                    }
+                }
+            ],
+
+            web: [
+                {
+                    name: "homepage",
+                    links: {
+                        visit: "https://itpuppy.pet",
+                        github: "https://github.com/it-pup/itpuppy.pet"
+                    }
+                }
+            ]
+        },
+
         // functions
         switchScreen(screen) {
             this.currentScreen = screen
