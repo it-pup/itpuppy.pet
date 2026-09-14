@@ -275,11 +275,12 @@
                                     <p class="name" x-text="entry.name"></p>
 
                                     <template x-for="[key, value] in Object.entries(entry.links)">
-                                        <p class="link" :class="key">
+                                        <p class="link">
                                             - <a 
                                                 :href="value" 
                                                 x-text="key"
                                                 class="url"
+                                                :class="key"
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                             ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
