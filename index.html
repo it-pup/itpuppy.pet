@@ -1,333 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>itpuppy | autumn</title>
 
-        <link rel="shortcut icon" href="assets/favicon.svg" type="image/svg+xml">
-        <meta name="description" content="🐾 autumn's personal homepage">
-        <link rel="canonical" href="https://itpuppy.pet/">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>itpuppy | autumn</title>
 
-        <meta property="og:title" content="itpuppy | autumn">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://itpuppy.pet/">
-        <meta property="og:description" content="🐾 autumn's personal homepage">
+	<link rel="shortcut icon" href="assets/favicon.svg" type="image/svg+xml">
+	<meta name="description" content="🐾 autumn's personal homepage">
+	<link rel="canonical" href="https://itpuppy.pet/">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    </head>
+	<meta property="og:title" content="itpuppy | autumn">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://itpuppy.pet/">
+	<meta property="og:description" content="🐾 autumn's personal homepage">
 
-    <body x-data="app" x-cloak>
-        <div class="app">
-            <div class="sidebar">
-                <h3 class="title">itpuppy</h3>
-                
-                <div class="nav">
-                    <button 
-                        class="button" 
-                        @click="switchScreen(Screens.ABOUT)"
-                        :class="{ 'active': isScreen(Screens.ABOUT) }"
-                    >
-                        about
-                    </button>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
 
-                    <button 
-                        class="button" 
-                        @click="switchScreen(Screens.PROJECTS)"
-                        :class="{ 'active': isScreen(Screens.PROJECTS) }"
-                    >
-                        projects
-                    </button>
+<body x-data="app" x-cloak>
+	<div class="app">
+		<div class="sidebar">
+			<h3 class="title">itpuppy</h3>
 
-                    <button 
-                        class="button" 
-                        @click="switchScreen(Screens.LINKS)"
-                        :class="{ 'active': isScreen(Screens.LINKS) }"
-                    >
-                        links
-                    </button>
-                </div>
-            </div>
+			<div class="nav">
+				<button class="button" @click="switchScreen(Screens.ABOUT)"
+					:class="{ 'active': isScreen(Screens.ABOUT) }">
+					about
+				</button>
 
-            <div class="content">
-                <div class="mobile-sidebar">
-                    <p class="title">itpuppy</p>
-                    <button class="btn" @click="mobileNavShow = !mobileNavShow"><i class="bi bi-list"></i></button>
+				<button class="button" @click="switchScreen(Screens.PROJECTS)"
+					:class="{ 'active': isScreen(Screens.PROJECTS) }">
+					projects
+				</button>
 
-                    <div class="nav" x-show="mobileNavShow" @click.outside="mobileNavShow = false">
-                        <button 
-                            class="button" 
-                            @click="switchScreen(Screens.ABOUT)"
-                            :class="{ 'active': isScreen(Screens.ABOUT) }"
-                        >
-                            about
-                        </button>
+				<button class="button" @click="switchScreen(Screens.LINKS)"
+					:class="{ 'active': isScreen(Screens.LINKS) }">
+					links
+				</button>
+			</div>
+		</div>
 
-                        <button 
-                            class="button" 
-                            @click="switchScreen(Screens.PROJECTS)"
-                            :class="{ 'active': isScreen(Screens.PROJECTS) }"
-                        >
-                            projects
-                        </button>
+		<div class="content">
+			<div class="mobile-sidebar">
+				<p class="title">itpuppy</p>
+				<button class="btn" @click="mobileNavShow = !mobileNavShow"><i class="bi bi-list"></i></button>
 
-                        <button 
-                            class="button" 
-                            @click="switchScreen(Screens.LINKS)"
-                            :class="{ 'active': isScreen(Screens.LINKS) }"
-                        >
-                            links
-                        </button>
-                    </div>
-                </div>
+				<div class="nav" x-show="mobileNavShow" @click.outside="mobileNavShow = false">
+					<button class="button" @click="switchScreen(Screens.ABOUT)"
+						:class="{ 'active': isScreen(Screens.ABOUT) }">
+						about
+					</button>
 
-                <section class="about section" x-show="isScreen(Screens.ABOUT)">
-                    <div class="hero">
-                        <h2 class="title"><i class="bi bi-clouds-fill"></i> autumn</h2>
-                        <p class="subtitle">@itpuppy</p>
-                    </div>
+					<button class="button" @click="switchScreen(Screens.PROJECTS)"
+						:class="{ 'active': isScreen(Screens.PROJECTS) }">
+						projects
+					</button>
 
-                    <p class="bio">
-                        hiii,,, my name is <b>autumn</b><br>
-                        also known as <b>itpuppy/itpup</b><br>
-                        <br>
-                        i'm a web development major, as well as a gamedev<br>
-                        ...and an amateur minecraft modder
-                    </p>
+					<button class="button" @click="switchScreen(Screens.LINKS)"
+						:class="{ 'active': isScreen(Screens.LINKS) }">
+						links
+					</button>
+				</div>
+			</div>
 
-                    <div class="info subsection">
-                        <p class="title">stuff about me (extremely useful)</p>
+			<section class="about section" x-show="isScreen(Screens.ABOUT)">
+				<div class="hero">
+					<h2 class="title"><i class="bi bi-clouds-fill"></i> autumn</h2>
+					<p class="subtitle">@itpuppy</p>
+				</div>
 
-                        <table class="table">
-                            <tr>
-                                <td class="key">birthday</td>
-                                <td>18.04</td>
-                            </tr>
-                            <tr>
-                                <td class="key">pronouns</td>
-                                <td>it/she 🏳️‍⚧️</td>
-                            </tr>
-                            <tr>
-                                <td class="key">langs</td>
-                                <td>en, ru, zh <span class="text-sub">// learning!</span></td>
-                            </tr>
-                            <tr>
-                                <td class="key">last mood upd</td>
-                                <td>bwaa <span class="text-sub" x-text="`// ${relativeTime(moodUpdDate, new Date())} ago`"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="key">fav anime</td>
-                                <td>nichijou</td>
-                            </tr>
-                            <tr>
-                                <td class="key">fav music genre</td>
-                                <td>hyperpop</td>
-                            </tr>
-                            <tr>
-                                <td class="key">fav color</td>
-                                <td><i class="bi bi-square-fill fav-color"></i> #b2ffb9</td>
-                            </tr>
-                            <tr>
-                                <td class="key">fav food</td>
-                                <td>tempura rolls</td>
-                            </tr>
-                        </table>
-                    </div>
+				<p class="bio">
+					hiii,,, my name is <b>autumn</b><br>
+					also known as <b>itpuppy/itpup</b><br>
+					<br>
+					i'm a web development major, as well as a gamedev<br>
+					...and an amateur minecraft modder
+				</p>
 
-                    <div class="using subsection">
-                        <p class="title">things i use on a daily basis</p>
+				<div class="info subsection">
+					<p class="title">stuff about me (extremely useful)</p>
 
-                        <table class="table">
-                            <tr>
-                                <td class="key">coding</td>
-                                <td>vscode, intellij, micro</td>
-                            </tr>
-                            <tr>
-                                <td class="key">music</td>
-                                <td>ytmusic and its clients</td>
-                            </tr>
-                            <tr>
-                                <td class="key">browsing</td>
-                                <td>thorium & vivaldi</td>
-                            </tr>
-                            <tr>
-                                <td class="key">texting</td>
-                                <td>exteragram, legcord, fluffychat & cinny</td>
-                            </tr>
-                            <tr>
-                                <td class="key">design</td>
-                                <td>figma</td>
-                            </tr>
-                            <tr>
-                                <td class="key">term</td>
-                                <td>iterm2 + fish</td>
-                            </tr>
-                        </table>
-                    </div>
+					<table class="table">
+						<tr>
+							<td class="key">birthday</td>
+							<td>18.04</td>
+						</tr>
+						<tr>
+							<td class="key">pronouns</td>
+							<td>it/she 🏳️‍⚧️</td>
+						</tr>
+						<tr>
+							<td class="key">langs</td>
+							<td>en, ru, zh <span class="text-sub">// learning!</span></td>
+						</tr>
+						<tr>
+							<td class="key">last mood upd</td>
+							<td>bwaa <span class="text-sub"
+									x-text="`// ${relativeTime(moodUpdDate, new Date())} ago`"></span></td>
+						</tr>
+						<tr>
+							<td class="key">fav anime</td>
+							<td>nichijou</td>
+						</tr>
+						<tr>
+							<td class="key">fav music genre</td>
+							<td>hyperpop</td>
+						</tr>
+						<tr>
+							<td class="key">fav color</td>
+							<td><i class="bi bi-square-fill fav-color"></i> #b2ffb9</td>
+						</tr>
+						<tr>
+							<td class="key">fav food</td>
+							<td>tempura rolls</td>
+						</tr>
+					</table>
+				</div>
 
-                    <div class="testimonials subsection">
-                        <p class="title">testimonials!</p>
+				<div class="using subsection">
+					<p class="title">things i use on a daily basis</p>
 
-                        <template x-for="testimonial in testimonials">
-                            <div class="testimonial">
-                                <p class="text" x-text="testimonial.text"></p>
-                                
-                                <template x-if="!Object.hasOwn(testimonial, 'url')">
-                                    <p class="from">- <span x-text="testimonial.from"></span></p>
-                                </template>
+					<table class="table">
+						<tr>
+							<td class="key">coding</td>
+							<td>vscode, intellij, micro</td>
+						</tr>
+						<tr>
+							<td class="key">music</td>
+							<td>ytmusic and its clients</td>
+						</tr>
+						<tr>
+							<td class="key">browsing</td>
+							<td>thorium & vivaldi</td>
+						</tr>
+						<tr>
+							<td class="key">texting</td>
+							<td>exteragram, legcord, fluffychat & cinny</td>
+						</tr>
+						<tr>
+							<td class="key">design</td>
+							<td>figma</td>
+						</tr>
+						<tr>
+							<td class="key">term</td>
+							<td>iterm2 + fish</td>
+						</tr>
+					</table>
+				</div>
 
-                                <template x-if="Object.hasOwn(testimonial, 'url')">
-                                    <p class="from">
-                                        - <a 
-                                            :href="testimonial.url" 
-                                            x-text="testimonial.from" 
-                                            class="link" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                        ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
-                                    </p>
-                                </template>
-                            </div>
-                        </template>
+				<div class="testimonials subsection">
+					<p class="title">testimonials!</p>
 
-                        <p class="comment text-sub">// sorted alphabetically by name</p>
-                    </div>
+					<template x-for="testimonial in testimonials">
+						<div class="testimonial">
+							<p class="text" x-text="testimonial.text"></p>
 
-                    <div class="contacts subsection">
-                        <p class="title">contact</p>
+							<template x-if="!Object.hasOwn(testimonial, 'url')">
+								<p class="from">- <span x-text="testimonial.from"></span></p>
+							</template>
 
-                        <p class="contact">email <span class="text-sub">via</span> contact [at] itpuppy [dot] pet</p>
-                        <p class="contact">matrix <span class="text-sub">via</span> autumn [colon] mona [dot] cat</p>
-                        <p class="contact">bsky dms <span class="text-sub">via</span> itpuppy [dot] pet</p>
-                    </div>
+							<template x-if="Object.hasOwn(testimonial, 'url')">
+								<p class="from">
+									- <a :href="testimonial.url" x-text="testimonial.from" class="link" target="_blank"
+										rel="noopener noreferrer"></a> <i class="bi bi-arrow-up-right-square-fill"></i>
+								</p>
+							</template>
+						</div>
+					</template>
 
-                    <div class="buttons subsection">
-                        <div class="group">
-                            <a href="#">
-                                <img src="assets/buttons/itpuppy.png" alt="itpuppy" class="button">
-                            </a>
+					<p class="comment text-sub">// sorted alphabetically by name</p>
+				</div>
 
-                            <a href="https://kathund.dev/" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/buttons/Amber_dark.png" alt="Amber" class="button">
-                            </a>
+				<div class="contacts subsection">
+					<p class="title">contact</p>
 
-                            <a href="https://mayaqq.dev/" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/buttons/mayaqq.gif" alt="mayaqq" class="button">
-                            </a>
+					<p class="contact">email <span class="text-sub">via</span> contact [at] itpuppy [dot] pet</p>
+					<p class="contact">matrix <span class="text-sub">via</span> autumn [colon] mona [dot] cat</p>
+					<p class="contact">bsky dms <span class="text-sub">via</span> itpuppy [dot] pet</p>
+				</div>
 
-                            <a href="https://mona.cat/" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/buttons/meowona.png" alt="meowona" class="button">
-                            </a>
+				<div class="buttons subsection">
+					<div class="group">
+						<a href="#">
+							<img src="assets/buttons/itpuppy.png" alt="itpuppy" class="button">
+						</a>
 
-                            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/buttons/pandy.jpg" alt="pandy" class="button">
-                            </a>
+						<a href="https://kathund.dev/" target="_blank" rel="noopener noreferrer">
+							<img src="assets/buttons/Amber_dark.png" alt="Amber" class="button">
+						</a>
 
-                            <a href="https://jane.pink/" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/buttons/Jane.png" alt="Jane" class="button">
-                            </a>
+						<a href="https://mayaqq.dev/" target="_blank" rel="noopener noreferrer">
+							<img src="assets/buttons/mayaqq.gif" alt="mayaqq" class="button">
+						</a>
 
-                            <a href="https://meowdd.ing/" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/buttons/meowdding.png" alt="meowdding" class="button">
-                            </a>
-                        </div>
+						<a href="https://mona.cat/" target="_blank" rel="noopener noreferrer">
+							<img src="assets/buttons/meowona.png" alt="meowona" class="button">
+						</a>
 
-                        <div class="group">
-                            <img class="button" src="assets/buttons/general/88by31.gif" alt="88by31">
-                            <img class="button" src="assets/buttons/general/any-browser.png" alt="any-browser">
-                            <img class="button" src="assets/buttons/general/darwin.gif" alt="darwin">
-                            <img class="button" src="assets/buttons/general/design.png" alt="design">
-                            <img class="button" src="assets/buttons/general/js.png" alt="js">
-                            <img class="button" src="assets/buttons/general/queen.gif" alt="queen">
-                            <img class="button" src="assets/buttons/general/trans.gif" alt="trans">
-                            <img class="button" src="assets/buttons/general/estrogen.gif" alt="estrogen">
-                        </div>
-                    </div>
+						<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+							<img src="assets/buttons/pandy.jpg" alt="pandy" class="button">
+						</a>
 
-                    <div class="smallprint subsection">
-                        <div class="line"></div>
+						<a href="https://jane.pink/" target="_blank" rel="noopener noreferrer">
+							<img src="assets/buttons/Jane.png" alt="Jane" class="button">
+						</a>
 
-                        <p class="text">
-                            itpuppy, 2026-2026<br>
-                            hosted using cloudflare pages<br>
-                            using alpine.js and bootstrap-icons<br>
-                            thanks to mona.cat for the itpuppy.pet domain &lt;3
-                        </p>
-                    </div>
-                </section>
+						<a href="https://meowdd.ing/" target="_blank" rel="noopener noreferrer">
+							<img src="assets/buttons/meowdding.png" alt="meowdding" class="button">
+						</a>
+					</div>
 
-                <section class="projects section" x-show="isScreen(Screens.PROJECTS)">
-                    <h2 class="hero-title"><i class="bi bi-code-slash"></i> projects</h2>
+					<div class="group">
+						<img class="button" src="assets/buttons/general/88by31.gif" alt="88by31">
+						<img class="button" src="assets/buttons/general/any-browser.png" alt="any-browser">
+						<img class="button" src="assets/buttons/general/darwin.gif" alt="darwin">
+						<img class="button" src="assets/buttons/general/design.png" alt="design">
+						<img class="button" src="assets/buttons/general/js.png" alt="js">
+						<img class="button" src="assets/buttons/general/queen.gif" alt="queen">
+						<img class="button" src="assets/buttons/general/trans.gif" alt="trans">
+						<img class="button" src="assets/buttons/general/estrogen.gif" alt="estrogen">
+					</div>
+				</div>
 
-                    <p>
-                        silly projects i've made<br>
-                        or working on right now,,,
-                    </p>
+				<div class="smallprint subsection">
+					<div class="line"></div>
 
-                    <template x-for="category in projects">
-                        <div class="subsection">
-                            <p class="title" x-text="category.subsection"></p>
+					<p class="text">
+						itpuppy, 2026-2026<br>
+						hosted using cloudflare pages<br>
+						using alpine.js and bootstrap-icons<br>
+						thanks to mona.cat for the itpuppy.pet domain &lt;3
+					</p>
+				</div>
+			</section>
 
-                            <template x-for="entry in category.entries">
-                                <div class="project">
-                                    <p class="name" x-text="entry.name"></p>
+			<section class="projects section" x-show="isScreen(Screens.PROJECTS)">
+				<h2 class="hero-title"><i class="bi bi-code-slash"></i> projects</h2>
 
-                                    <template x-for="[key, value] in Object.entries(entry.links)">
-                                        <p class="link">
-                                            - <a 
-                                                :href="value" 
-                                                x-text="key"
-                                                class="url"
-                                                :class="key"
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                            ></a> <i class="bi bi-arrow-up-right-square-fill"></i>
-                                        </p>
-                                    </template>
-                                </div>
-                            </template>
-                        </div>
-                    </template>
+				<p>
+					silly projects i've made<br>
+					or working on right now,,,
+				</p>
 
-                    <p class="text-sub">// this list will update over time!</p>
-                </section>
+				<template x-for="category in projects">
+					<div class="subsection">
+						<p class="title" x-text="category.subsection"></p>
 
-                <section class="links section" x-show="isScreen(Screens.LINKS)">
-                    <h2 class="hero-title"><i class="bi bi-chat-square-heart-fill"></i> links</h2>
+						<template x-for="entry in category.entries">
+							<div class="project">
+								<p class="name" x-text="entry.name"></p>
 
-                    <p>
-                        socials, bookmarks, recommendations<br>
-                        memes, and a bunch of other linkable stuff
-                    </p>
+								<template x-for="[key, value] in Object.entries(entry.links)">
+									<p class="link">
+										- <a :href="value" x-text="key" class="url" :class="key" target="_blank"
+											rel="noopener noreferrer"></a> <i
+											class="bi bi-arrow-up-right-square-fill"></i>
+									</p>
+								</template>
+							</div>
+						</template>
+					</div>
+				</template>
 
-                    <template x-for="category in links">
-                        <div class="subsection">
-                            <p class="title" x-text="category.subsection"></p>
+				<p class="text-sub">// this list will update over time!</p>
+			</section>
 
-                            <template x-for="entry in category.entries">
-                                <div class="link">
-                                    <i class="bi" :class="[entry.icon, entry.name]"></i>
-                                    <a 
-                                        :href="entry.url"
-                                        target="_blank"
-                                        class="url"
-                                        :class="entry.name"
-                                        rel="noopener noreferrer"
-                                        x-text="entry.name"
-                                    ></a>
-                                    <i class="bi bi-arrow-up-right-square-fill"></i>
-                                </div>
-                            </template>
-                        </div>
-                    </template>
+			<section class="links section" x-show="isScreen(Screens.LINKS)">
+				<h2 class="hero-title"><i class="bi bi-chat-square-heart-fill"></i> links</h2>
 
-                    <p class="text-sub">// this list will update over time!</p>
-                </section>
-            </div>
-        </div>
+				<p>
+					socials, bookmarks, recommendations<br>
+					memes, and a bunch of other linkable stuff
+				</p>
 
-        <script src="js/app.js"></script>
-    </body>
+				<template x-for="category in links">
+					<div class="subsection">
+						<p class="title" x-text="category.subsection"></p>
+
+						<template x-for="entry in category.entries">
+							<div class="link">
+								<i class="bi" :class="[entry.icon, entry.name]"></i>
+								<a :href="entry.url" target="_blank" class="url" :class="entry.name"
+									rel="noopener noreferrer" x-text="entry.name"></a>
+								<i class="bi bi-arrow-up-right-square-fill"></i>
+							</div>
+						</template>
+					</div>
+				</template>
+
+				<p class="text-sub">// this list will update over time!</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+
 </html>

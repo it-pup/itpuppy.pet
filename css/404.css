@@ -3,63 +3,65 @@
 
 /* base, root */
 :root {
-    --main-bg: #171717;
-    --second-bg: #0f0f0f;
+	--main-bg: #171717;
+	--second-bg: #0f0f0f;
 
-    --main-text: #ffffff;
-    --second-text: #5F5F5F;
-    --sub-text: #8D8D8D;
+	--main-text: #ffffff;
+	--second-text: #5F5F5F;
+	--sub-text: #8D8D8D;
 }
 
 html {
-    overflow-y: auto;
-    scrollbar-gutter: stable;
-    height: 100%;
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+	height: 100%;
 }
 
 body {
-    font-family: "Roboto Mono", monospace;
-    font-size: 14px;
+	font-family: "Roboto Mono", monospace;
+	font-size: 14px;
 
-    background: var(--main-bg);
-    color: var(--main-text);
-    height: 100%;
+	background: var(--main-bg);
+	color: var(--main-text);
+	height: 100%;
 }
+
 /* ========== */
 
 /* page */
 .notfound {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    min-height: 100vh;
+	min-height: 100vh;
 
-    .content {
-        .main {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 20px;
+	.content {
+		.main {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 20px;
 
-            .icon {
-                font-size: 4rem;
-            }
+			.icon {
+				font-size: 4rem;
+			}
 
-            @media (width <= 450px) {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
+			@media (width <=450px) {
+				flex-direction: column;
+				text-align: center;
+			}
+		}
 
-        .back {
-            margin-top: 40px;
-            text-align: center;
+		.back {
+			margin-top: 40px;
+			text-align: center;
 
-            .link {
-                text-decoration: underline;
-            }
-        }
-    }
+			.link {
+				text-decoration: underline;
+			}
+		}
+	}
 }
+
 /* ==== */

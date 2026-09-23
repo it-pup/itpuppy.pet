@@ -3,325 +3,347 @@
 
 /* base, root */
 :root {
-    --main-bg: #171717;
-    --second-bg: #0f0f0f;
+	--main-bg: #171717;
+	--second-bg: #0f0f0f;
 
-    --menu-nav-bg: #0b0b0b;
-    --menu-nav-border: #222222;
+	--menu-nav-bg: #0b0b0b;
+	--menu-nav-border: #222222;
 
-    --main-text: #ffffff;
-    --second-text: #5F5F5F;
-    --sub-text: #8D8D8D;
+	--main-text: #ffffff;
+	--second-text: #5F5F5F;
+	--sub-text: #8D8D8D;
 
-    --github-link-color: #c9cde3;
-    --visit-link-color: #efefef;
+	--github-link-color: #c9cde3;
+	--visit-link-color: #efefef;
 
-    --bsky-link-color: #84a1ff;
-    --osu-link-color: #f6c2ff;
-    --monkeytype-link-color: #fff6af;
-    --minecraft-link-color: #caffd2;
+	--bsky-link-color: #84a1ff;
+	--osu-link-color: #f6c2ff;
+	--monkeytype-link-color: #fff6af;
+	--minecraft-link-color: #caffd2;
 
-    --content-width: 40vw;
+	--content-width: 40vw;
 
-    @media (width <= 2000px) {
-        --content-width: 50vw;
-    }
+	@media (width <=2000px) {
+		--content-width: 50vw;
+	}
 
-    @media (width <= 1750px) {
-        --content-width: 55vw;
-    }
+	@media (width <=1750px) {
+		--content-width: 55vw;
+	}
 
-    @media (width <= 1570px) {
-        --content-width: 60vw;
-    }
+	@media (width <=1570px) {
+		--content-width: 60vw;
+	}
 
-    @media (width <= 1000px) {
-        --content-width: 65vw;
-    }
+	@media (width <=1000px) {
+		--content-width: 65vw;
+	}
 
-    @media (width <= 830px) {
-        --content-width: 100vw;
-    }
+	@media (width <=830px) {
+		--content-width: 100vw;
+	}
 }
 
 html {
-    overflow-y: auto;
-    scrollbar-gutter: stable;
-    height: 100%;
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+	height: 100%;
 }
 
 body {
-    font-family: "Roboto Mono", monospace;
-    font-size: 14px;
+	font-family: "Roboto Mono", monospace;
+	font-size: 14px;
 
-    background: var(--main-bg);
-    color: var(--main-text);
-    height: 100%;
+	background: var(--main-bg);
+	color: var(--main-text);
+	height: 100%;
 }
+
 /* ========== */
 
 /* application */
 .app {
-    .text-sub { 
-        color: var(--sub-text); 
-    }
+	.text-sub {
+		color: var(--sub-text);
+	}
 
-    /* sidebar */
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+	/* sidebar */
+	.sidebar {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 
-        position: absolute;
-        width: calc((100vw - var(--content-width)) / 2 - 30px); /* love this (no) */
-        top: 10px;
+		position: absolute;
+		width: calc((100vw - var(--content-width)) / 2 - 30px);
+		/* love this (no) */
+		top: 10px;
 
-        .title {
-            font-weight: 400;
-            font-size: 1.4rem;
+		.title {
+			font-weight: 400;
+			font-size: 1.4rem;
 
-            margin-bottom: 5px;
-        }
+			margin-bottom: 5px;
+		}
 
-        .nav {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+		.nav {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
 
-            .active {
-                text-decoration: underline;
-            }
-        }
+			.active {
+				text-decoration: underline;
+			}
+		}
 
-        @media (width <= 830px) {
-            display: none;
-        }
-    }
+		@media (width <=830px) {
+			display: none;
+		}
+	}
 
-    /* sections */
-    .content {
-        background-color: var(--second-bg);
-        min-height: 100vh;
+	/* sections */
+	.content {
+		background-color: var(--second-bg);
+		min-height: 100vh;
 
-        width: var(--content-width);
-        margin: 0 auto;
+		width: var(--content-width);
+		margin: 0 auto;
 
-        .mobile-sidebar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 35px 0 35px;
-            margin-bottom: -15px;
+		.mobile-sidebar {
+			display: flex;
+			justify-content: space-between;
+			padding: 20px 35px 0 35px;
+			margin-bottom: -15px;
 
-            position: relative;
+			position: relative;
 
-            .title {
-                font-size: 1.3rem;
-                -webkit-user-select: none;
-                user-select: none;
-            }
+			.title {
+				font-size: 1.3rem;
+				-webkit-user-select: none;
+				user-select: none;
+			}
 
-            .btn {
-                font-size: 1.5rem;
-            }
+			.btn {
+				font-size: 1.5rem;
+			}
 
-            .nav {
-                position: absolute;
+			.nav {
+				position: absolute;
 
-                display: flex;
-                flex-direction: column;
-                align-items: end;
+				display: flex;
+				flex-direction: column;
+				align-items: end;
 
-                top: calc(20px + 40px);
-                right: 35px;
+				top: calc(20px + 40px);
+				right: 35px;
 
-                background-color: var(--menu-nav-bg);
-                border: 1px solid var(--menu-nav-border);
-                width: fit-content;
-                height: fit-content;
+				background-color: var(--menu-nav-bg);
+				border: 1px solid var(--menu-nav-border);
+				width: fit-content;
+				height: fit-content;
 
-                padding: 10px 20px 10px 40px;
+				padding: 10px 20px 10px 40px;
 
-                .active {
-                    text-decoration: underline;
-                }
+				.active {
+					text-decoration: underline;
+				}
 
-                @media (width <= 480px) {
-                    top: calc(10px + 40px);
-                    right: 20px;
-                }
-            }
+				@media (width <=480px) {
+					top: calc(10px + 40px);
+					right: 20px;
+				}
+			}
 
-            @media (width > 830px) {
-                display: none;
-            }
+			@media (width > 830px) {
+				display: none;
+			}
 
-            @media (width <= 480px) {
-                padding: 10px 20px 0 20px;
-            }
-        }
+			@media (width <=480px) {
+				padding: 10px 20px 0 20px;
+			}
+		}
 
-        .section {
-            padding: 35px 35px 5px 35px;
-            line-height: 17px;
+		.section {
+			padding: 35px 35px 5px 35px;
+			line-height: 17px;
 
-            .subsection {
-                margin: 32px 0;
+			.subsection {
+				margin: 32px 0;
 
-                .title {
-                    font-weight: bold;
-                    margin-bottom: 15px;
-                }
+				.title {
+					font-weight: bold;
+					margin-bottom: 15px;
+				}
 
-                .table {
-                    .key {
-                        padding-right: 45px;
+				.table {
+					.key {
+						padding-right: 45px;
 
-                        @media (width <= 530px) {
-                            padding-right: 20px;
-                        }
-                    }
-                }
-            }
+						@media (width <=530px) {
+							padding-right: 20px;
+						}
+					}
+				}
+			}
 
-            @media (width <= 480px) {
-                padding: 20px 20px 5px 20px;
-            }
-        }
+			@media (width <=480px) {
+				padding: 20px 20px 5px 20px;
+			}
+		}
 
-        /* about section */
-        .about {
-            .hero {
-                .title {
-                    font-size: 2.1rem;
-                    font-weight: 400;
+		/* about section */
+		.about {
+			.hero {
+				.title {
+					font-size: 2.1rem;
+					font-weight: 400;
 
-                    margin-bottom: 5px;
-                }
+					margin-bottom: 5px;
+				}
 
-                .subtitle {
-                    font-size: 1.05rem;
-                    color: var(--second-text);
+				.subtitle {
+					font-size: 1.05rem;
+					color: var(--second-text);
 
-                    margin-bottom: 25px;
-                }
-            }
+					margin-bottom: 25px;
+				}
+			}
 
-            .info {
-                .fav-color {
-                    color: #b2ffb9;
-                }
-            }
+			.info {
+				.fav-color {
+					color: #b2ffb9;
+				}
+			}
 
-            .testimonials {
-                .testimonial {
-                    margin: 10px 0;
+			.testimonials {
+				.testimonial {
+					margin: 10px 0;
 
-                    .from {
-                        margin-left: 30px;
+					.from {
+						margin-left: 30px;
 
-                        .link {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
+						.link {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
 
-            .buttons {
-                margin-top: 60px;
+			.buttons {
+				margin-top: 60px;
 
-                .button {
-                    display: inline;
-                }
+				.button {
+					display: inline;
+				}
 
-                .group {
-                    margin: 15px 0;
-                    padding: 0 150px;
+				.group {
+					margin: 15px 0;
+					padding: 0 150px;
 
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    justify-content: center;
-                    gap: 10px;
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					justify-content: center;
+					gap: 10px;
 
-                    @media (width <= 1270px) {
-                        padding: 0 100px;
-                    }
+					@media (width <=1270px) {
+						padding: 0 100px;
+					}
 
-                    @media (width <= 1105px) {
-                        padding: 0 50px;
-                    }
+					@media (width <=1105px) {
+						padding: 0 50px;
+					}
 
-                    @media (width <= 560px) {
-                        padding: 0 20px;
-                    }
+					@media (width <=560px) {
+						padding: 0 20px;
+					}
 
-                    @media (width <= 500px) {
-                        padding: 0 10px;
-                    }
-                }
-            }
+					@media (width <=500px) {
+						padding: 0 10px;
+					}
+				}
+			}
 
-            .smallprint {
-                margin-top: 60px;
-                text-align: center;
-                font-size: 0.8rem;
+			.smallprint {
+				margin-top: 60px;
+				text-align: center;
+				font-size: 0.8rem;
 
-                color: var(--second-text);
+				color: var(--second-text);
 
-                .line {
-                    height: 1px;
-                    width: 100%;
+				.line {
+					height: 1px;
+					width: 100%;
 
-                    background-color: var(--second-text);
-                    margin-bottom: 30px;
-                }
-            }
-        }
+					background-color: var(--second-text);
+					margin-bottom: 30px;
+				}
+			}
+		}
 
-        /* projects section */
-        .projects {
-            .hero-title {
-                font-weight: normal;
-                font-size: 2.1rem;
-                margin-bottom: 25px;
-            }
+		/* projects section */
+		.projects {
+			.hero-title {
+				font-weight: normal;
+				font-size: 2.1rem;
+				margin-bottom: 25px;
+			}
 
-            .project {
-                margin: 10px 0;
+			.project {
+				margin: 10px 0;
 
-                .link {
-                    margin-left: 10px;
+				.link {
+					margin-left: 10px;
 
-                    .url {
-                        text-decoration: underline;
-                    }
-                }
+					.url {
+						text-decoration: underline;
+					}
+				}
 
-                .github { color: var(--github-link-color); }
-                .visit { color: var(--visit-link-color); }
-            }
-        }
+				.github {
+					color: var(--github-link-color);
+				}
 
-        /* links section */
-        .links {
-            .hero-title {
-                font-weight: normal;
-                font-size: 2.1rem;
-                margin-bottom: 25px;
-            }
+				.visit {
+					color: var(--visit-link-color);
+				}
+			}
+		}
 
-            .link {
-                .url {
-                    text-decoration: underline;
-                }
+		/* links section */
+		.links {
+			.hero-title {
+				font-weight: normal;
+				font-size: 2.1rem;
+				margin-bottom: 25px;
+			}
 
-                .github { color: var(--github-link-color); }
-                .bluesky { color: var(--bsky-link-color); }
-                .osu { color: var(--osu-link-color); }
-                .monkeytype { color: var(--monkeytype-link-color); }
-                .minecraft { color: var(--minecraft-link-color); }
-            }   
-        }
-    }
+			.link {
+				.url {
+					text-decoration: underline;
+				}
+
+				.github {
+					color: var(--github-link-color);
+				}
+
+				.bluesky {
+					color: var(--bsky-link-color);
+				}
+
+				.osu {
+					color: var(--osu-link-color);
+				}
+
+				.monkeytype {
+					color: var(--monkeytype-link-color);
+				}
+
+				.minecraft {
+					color: var(--minecraft-link-color);
+				}
+			}
+		}
+	}
 }
+
 /* =========== */
