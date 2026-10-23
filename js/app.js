@@ -99,6 +99,12 @@ function getProjects() {
 					links: {
 						github: "https://github.com/it-pup/woofaddons"
 					}
+				},
+				{
+					name: "fluffy isles",
+					links: {
+						github: "https://github.com/it-pup/fluffy-isles"
+					}
 				}
 			]
 		},
