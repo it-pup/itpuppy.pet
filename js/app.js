@@ -56,7 +56,7 @@ function getTestimonials() {
 		{
 			from: "juna",
 			url: "https://github.com/j10a1n15",
-			text: "Autumn makes my tail wag"
+			text: "Winter makes my tail wag"
 		},
 		{
 			from: "Sappho 594 BC",
